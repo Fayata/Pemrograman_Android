@@ -16,9 +16,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnMoveActivity = findViewById(R.id.btn_move_activity);
         btnMoveActivity.setOnClickListener(this);
+        
+        Button btnMoveWithDataActivity = findViewById(R.id.btn_move_activity_data);
+        btnMoveWithDataActivity.setOnClickListener(this);
     }
     public void onClick(View view){
-        Intent moveIntent = new Intent(MainActivity.this, MoveActivity.class);
-        startActivity(moveIntent);
+        if (view.getId() == R.id.btn_move_activity){
+            Intent moveIntent = new Intent(MainActivity.this, MoveActivity.class);
+            startActivity(moveIntent);
+        } else if (view.getId() == R.id.btn_move_activity_data) {
+            Intent moveWithDataIntent = new Intent(MainActivity.this, MoveWithDataActivity.class);
+            moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_KULIAH, "PEMROGRAMAN BERBASIS MOBILE");
+            moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_KELAS, 5);
+            startActivity(moveWithDataIntent);
+        }
     }
 }
