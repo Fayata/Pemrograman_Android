@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="move_activity">Pindah Activity</string>
+    <string name="this_is_moveactivity">INI MOVE ACTIVITY</string>
+</resources>
